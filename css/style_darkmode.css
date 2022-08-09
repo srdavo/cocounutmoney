@@ -1,0 +1,580 @@
+body{
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  zoom: 100%;
+  background-color: black;
+
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+-webkit-user-select: none;
+-webkit-tap-highlight-color: transparent;
+}
+::-webkit-scrollbar {
+display: none;
+}
+::-webkit-date-and-time-value{ text-align:left;}
+form{
+  width: 100%;
+}
+
+header{
+  position: fixed;
+
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  height: 90px;
+  background-color: #F2F2F6;
+  background-color:blue;
+
+}
+header span a{
+  font-size: 22px;
+  text-decoration:none;
+  color: black;
+  margin-right: 22px;
+}
+@keyframes transitionTable {
+  from {
+    opacity: 50%;
+    transform: scale(98%);
+  }
+  to {
+    opacity: 100%;
+    transform: scaleX(100%);
+  }
+}
+@keyframes transitionIn {
+  from {
+    opacity: 50%;
+    transform: scale(99%);
+  }
+  to {
+    opacity: 100%;
+    transform: scaleX(100%);
+  }
+}
+@keyframes transitionAlert {
+  from {
+    opacity: 100%;
+    transform: scale(100%);
+  }
+  to {
+    opacity: 0%;
+    transform: scaleX(95%);
+    visibility:hidden;
+  }
+}
+@keyframes transitionCircles {
+  from {
+    opacity: 0.5;
+
+    transform: scale(0%);
+
+  }
+  to {
+    opacity: 1;
+    transform: scale(100%);
+  }
+}
+h1.index_h1{
+  font-size: 60px;
+  line-height: 50px;
+}
+.main{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 800px;
+
+  margin: 0px auto;
+  left: 0;
+  right: 0;
+  position: fixed;
+  box-sizing: border-box;
+  height: 100%;
+
+  padding: 32px;
+
+}
+
+.content_holder{
+
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 100%;
+  height: auto;
+  animation: transitionIn .8s;
+  animation-timing-function: cubic-bezier(.11,.76,.31,.97);
+}
+
+h1{
+  display:flex;
+  font-size: 38px;
+  width: 100%;
+  font-weight: bold;
+  color: white;
+  margin: 0px;
+  margin-bottom: 32px;
+  animation: transitionTable 0.6s;
+  animation-timing-function: cubic-bezier(.11,.76,.31,.97);
+  line-height: 32px;
+}
+h2.index_h2{
+  font-size: 48px;
+  font-weight: 300;
+  color: white;
+  margin: 0px;
+}
+h2{
+  width: 100%;
+  font-size: 22px;
+
+  font-weight: bold;
+  color: white;
+  margin: 0px;
+  margin-bottom: 6px;
+}
+input{
+  box-sizing: border-box;
+  display: inline-block;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  text-align: left;
+
+  width: 100%;
+  height: 56px;
+  border-radius: 22px;
+  outline: none;
+  border: none;
+
+  padding: 14px 22px;
+  font-size: 23px;
+  color: white;
+  background-color:#1C1C1D;
+  margin-bottom: 11px;
+  transition: All 0.2s;
+  font-family: Roboto;
+}
+
+
+textarea{
+  box-sizing: border-box;
+  background-color: #1C1C1D;
+  color:white;
+
+  outline: none;
+  border: none;
+  border-radius: 22px;
+  overflow: hidden;
+  width: 100%;
+  height: 160px;
+  margin-bottom: 11px;
+
+  font-size: 18px;
+  font-family: Roboto;
+  resize: none;
+  padding: 22px;
+
+}
+button{
+  box-sizing: border-box;
+  width: 100%;
+  height: 58px;
+
+  text-decoration: none;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  padding: 19px 0;
+  background-color: #0066FF;
+  border: none;
+  border-radius: 30px;
+
+  margin-top: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  animation: transitionTable 0.6s;
+  animation-timing-function: cubic-bezier(.11,.76,.31,.97);
+}
+button:hover{
+  background-color:#005AE0;
+}
+button:checked{
+  background-color:red;
+}
+a{
+
+  cursor: pointer;
+  outline:none;
+}
+a.index_a{
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 58px;
+  display: flex;
+  justify-content: center;
+
+  text-align: center;
+  padding: 19px 0;
+  background-color: #0066FF;
+
+  border-radius: 30px;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+a.back{
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  width: 86px;
+  height: 32px;
+  color:black;
+  border-radius: 50px;
+  text-decoration: none;
+  cursor: pointer;
+
+  margin-bottom: 32px;
+  transition: all 0.3s;
+}
+a.back:hover{
+  background-color: #1C1C1D;
+}
+.main h3{
+  min-width: 100%;
+  margin: 0;
+  font-size: 46px;
+  font-weight: normal;
+  color: white;
+}
+
+span.ripple {
+  margin:auto;
+  position: absolute;
+  background: black;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50%;
+  animation: rippleanimate 1s;
+  animation-timing-function: cubic-bezier(.22,1.1,.53,.98);
+  opacity: 0;
+  z-index: 10
+}
+
+@keyframes rippleanimate {
+  from {
+    width: 0px;
+    height: 0px;
+    opacity: 0.5;
+  }
+  to {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+div.userAmount_holder{
+  overflow: hidden;
+  overflow-x: scroll;
+
+  white-space: nowrap;
+  display: flex;
+  box-sizing: border-box;
+  width:100%;
+  height:82px;
+  padding:0 11px;
+  background-color:#1C1C1D;
+  border-radius:22px;
+  align-items: center
+}
+.userAmount_holder::-webkit-scrollbar {
+  display: none;
+}
+
+div.lastMovements_holder{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  box-sizing: border-box;
+  width:100%;
+  height:267px;
+  padding: 0;
+
+  margin-top: 60px;
+}
+
+table.last_movements{
+  border-collapse:separate;
+  border-spacing:0 6px;
+  width: 100%;
+}
+.last_movements td.date{
+    box-sizing: border-box;
+    background-color:#1C1C1D;
+    color: white;
+    width: 51%;
+    height: 51px;
+    max-height: 51px;
+    border:none;
+    padding: 0px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: normal;
+    vertical-align: middle;
+    padding-left: 22px;
+    border-radius: 14px 0 0 14px;
+}
+.last_movements td.amount{
+    box-sizing: border-box;
+    background-color:#1C1C1D;
+
+    color:white;
+    width: 51%;
+    height: 51px;
+    max-height: 51px;
+    border:none;
+    padding: 0px;
+    text-align: right;
+    font-size: 16px;
+    font-weight: normal;
+    vertical-align: middle;
+    padding-right: 22px;
+    border-radius: 0 14px 14px 0;
+}
+a.lastMovements_links{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  width: calc(100% - 11px);
+  height: 42px;
+
+  text-align: center;
+
+  background-color: #0066FF;
+
+  border-radius: 14px;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+a.lastMovements_links:hover{
+  background-color:#005AE0;
+}
+table.movements{
+  border-collapse:separate;
+  border-spacing:0px 6px;
+  width: 100%;
+}
+.movements td.date{
+    box-sizing: border-box;
+    background-color:#1C1C1D;
+    color:white;
+
+    width: 40%;
+    height: 51px;
+    border:none;
+    padding: 0px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: normal;
+    vertical-align: middle;
+    padding-left: 22px;
+    border-radius: 14px 0 0 14px;
+}
+
+.movements td.amount{
+    box-sizing: border-box;
+    background-color:#1C1C1D;
+    color:white;
+
+    width: 40%;
+    height: 51px;
+    border:none;
+    padding: 0px;
+    text-align: right;
+    font-size: 16px;
+    font-weight: normal;
+    vertical-align: middle;
+    padding-right: 22px;
+    border-radius: 0;
+
+
+}
+
+.movements td.button{
+    box-sizing: border-box;
+    background-color:#1C1C1D;
+    color:white;
+    vertical-align: middle;
+    width: 20%;
+    height: auto;
+    border:none;
+    padding: 0px;
+    text-align: right;
+    font-size: 16px;
+    font-weight: normal;
+    vertical-align: middle;
+    padding-right: 6px;
+    border-radius: 0 14px 14px 0;
+}
+td.button a{
+  box-sizing: border-box;
+  display: flex;
+  text-align: center;
+  width: 100%;
+  height: 38px;
+  border-radius: 8px;
+  opacity: 80%;
+  color: white;
+  background-color: black;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  font-weight: normal;
+  transition: all 0.050s;
+
+}
+img{
+  filter: invert();
+}
+
+div.mini_header{
+  display: flex;
+
+  box-sizing: border-box;
+  width: 50%;
+  height: 60px;
+  align-items: center;
+}
+
+.mini_header button{
+  display: flex;
+  margin:0;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  width: 86px;
+  height: 32px;
+  padding: 0;
+  background-color: inherit;
+  border-radius: 50px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* NOTE: ESTO DE AQUI CREO QUE NO HACE NADA */
+.menu button{
+  display: flex;
+  margin:0;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  width: 86px;
+  height: 32px;
+  padding: 0;
+  background-color: inherit;
+  border-radius: 50px;
+  text-decoration: none;
+  cursor: pointer;
+}
+a.menu:hover{
+  background-color: #1C1C1D;
+}
+
+
+a.menu{
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 58px;
+
+  justify-content: flex-start;
+  align-items: center;
+  display:flex;
+
+  padding:0 22px;
+  background-color:#1C1C1D;
+  border-radius: 22px;
+
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.delete{
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 52px;
+
+  justify-content: center;
+  align-items: center;
+  display:flex;
+
+  padding:0 22px;
+  border: solid 1px #ff5154;
+  background-color:black;
+  border-radius: 22px;
+
+  font-size: 18px;
+  color: #ff5154;
+  text-decoration: none;
+
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.delete:hover{
+  border: solid 1px #ff5154;
+  background-color: #ff5154;
+  color:white;
+}
+
+div.message{
+  position: absolute;
+  display:flex;
+  box-sizing: border-box;
+
+  width: calc(100% - 64px);
+  height: auto;
+
+  border-radius: 22px;
+  padding: 15px 32px;
+
+  font-size:32px;
+  color:white;
+  font-weight: bold;
+
+  background-color:#1C1D1C;
+  z-index: 2;
+
+  animation: transitionAlert 0.2s ease-in 1.5s;
+  animation-fill-mode: forwards;
+}

@@ -1,0 +1,613 @@
+body{
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  zoom: 100%;
+  background-color: #FDFCF9;
+
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+::-webkit-scrollbar {display: none;}
+::-webkit-date-and-time-value{ text-align:left;}
+
+
+
+form{
+  width: 100%;
+}
+header{
+  position: fixed;
+
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  height: 90px;
+  background-color: #F2F2F6;
+  background-color:blue;
+
+}
+header span a{
+  font-size: 22px;
+  text-decoration:none;
+  color: black;
+  margin-right: 22px;
+}
+@keyframes transitionTable {
+  from {
+    opacity: 50%;
+    transform: scale(98%);
+  }
+  to {
+    opacity: 100%;
+    transform: scaleX(100%);
+  }
+}
+@keyframes transitionIn {
+  from {
+    opacity: 50%;
+    transform: scale(99%);
+  }
+  to {
+    opacity: 100%;
+    transform: scaleX(100%);
+  }
+}
+@keyframes transitionAlert {
+  from {
+    opacity: 100%;
+    transform: scale(100%);
+  }
+  to {
+    opacity: 0%;
+    transform: scaleX(95%);
+    visibility:hidden;
+  }
+}
+@keyframes transitionCircles {
+  from {
+    opacity: 0.5;
+
+    transform: scale(0%);
+
+  }
+  to {
+    opacity: 1;
+    transform: scale(100%);
+  }
+}
+
+h1.index_h1{
+  font-size: 60px;
+  line-height: 50px;
+}
+.main{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 800px;
+
+  margin: 0px auto;
+  left: 0;
+  right: 0;
+  position: fixed;
+  box-sizing: border-box;
+  height: 100%;
+
+  padding: 16px;
+
+}
+@media only screen and (max-width: 600px) {
+  .content_holder{padding-top:40px;}
+}
+.content_holder{
+
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 100%;
+  height: auto;
+}
+
+h1{
+  display:flex;
+  font-size: 38px;
+  width: 100%;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.75);
+  margin: 0px;
+  line-height: 32px;
+}
+h2.index_h2{
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 30px;
+  color: rgba(0, 0, 0, 0.75);
+  margin: 0px;
+}
+h2{
+  width: 100%;
+  font-size: 22px;
+  font-weight: 500;
+
+  color: black;
+  opacity: 87%;
+  margin: 0;
+}
+input{
+  box-sizing: border-box;
+  display: inline-block;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  text-align: left;
+
+  width: 100%;
+  height: 60px;
+  border-radius: 26px;
+  outline: none;
+  border: none;
+
+  padding: 18px 22px;
+  font-size: 22px;
+  color: rgba(0, 0, 0, 0.75);
+
+  background-color:#E1E3DF;
+  margin-bottom: 16px;
+  transition: All 0.2s;
+  font-family: Roboto;
+}
+
+
+textarea{
+  box-sizing: border-box;
+  background-color: #E1E3DF;
+  color: rgba(0, 0, 0, 0.75);
+
+  outline: none;
+  border: none;
+  border-radius: 32px;
+  overflow: hidden;
+  width: 100%;
+  height: 160px;
+  margin-bottom: 22px;
+
+  font-size: 18px;
+  font-family: Roboto;
+  resize: none;
+  padding: 22px;
+
+}
+
+@keyframes smoothstart-animation {
+  from {
+    background-color: #3D6750;
+    opacity: 1;
+    z-index: 1;
+  }
+  to {
+      opacity: 0;
+z-index: 1;
+  }
+}
+div.smoothstart{
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+
+  z-index: 0;
+  opacity: 0;
+  animation: smoothstart-animation 0.5s;
+}
+
+@keyframes fullscreen-animation {
+    from {
+      transform: scale(1);
+      z-index: 2;
+    }
+    to {
+        transform: scale(100);
+        border-radius:0px;
+        z-index: 2;
+    }
+  }
+  @keyframes fullscreen-animation-end {
+      from {
+        transform: scale(1);
+        z-index: 2;
+      }
+      to {
+        transform: scale(1);
+        z-index: 2;
+      }
+    }
+button{
+    animation-timing-function: cubic-bezier(0,.94,0,1.9);
+    transition: All 0.01s;
+    float: right;
+    width:auto;
+    height:auto;
+    min-height:55px;
+    background-color:#3D6750;
+    font-family: 'Poppins', sans-serif;
+    outline:none;
+    border:none;
+    padding: 13px 48px;
+    border-radius:100px;
+
+    font-weight:500;
+    font-size: 21px;
+    color: rgba(255, 255, 255, 0.87);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
+a{
+  cursor: pointer;
+  outline:none;
+}
+a.index_a{
+  display: flex;
+
+align-items: center;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 58px;
+
+  justify-content: center;
+
+  text-align: center;
+  padding: 19px 0;
+  background-color:#3D6750;
+  color: rgba(255, 255, 255, 0.87);
+
+  border-radius: 30px;
+  font-size: 18px;
+
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+a.back{
+  display:flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  width: 86px;
+  height: 32px;
+  color:black;
+  border-radius: 50px;
+  text-decoration: none;
+  cursor: pointer;
+
+  margin-bottom: 32px;
+  transition: all 0.3s;
+}
+a.back:hover{
+  opacity: 90%;
+}
+
+
+span.ripple {
+  margin:auto;
+  position: absolute;
+  background: #FDFCF9;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50%;
+  animation: rippleanimate 1s;
+  animation-timing-function: cubic-bezier(.22,1.1,.53,.98);
+  opacity: 0;
+  z-index: 10
+}
+
+@keyframes rippleanimate {
+  from {
+    width: 0px;
+    height: 0px;
+    opacity: 0.5;
+  }
+  to {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+
+/* estilo de el div que muestra el dinero en la página principal */
+div.moneyholder{
+  transition: All 0.1s;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+
+  width:100%;
+  height:auto;
+  min-height: 226px;
+  padding:0 32px;
+  padding-top: 32px;
+  padding-bottom:16px;
+
+  overflow: hidden;
+  overflow-x: scroll;
+
+  background-color:#BFEDD1;
+  border-radius:50px;
+  align-content: space-between;
+  cursor:pointer;
+}
+div.moneyholder:hover{
+  background-color:#AAD9BD;
+}
+.userAmount_holder::-webkit-scrollbar {display: none;}
+.moneyholder h3{
+    min-width: 100%;
+    margin: 0;
+    text-align: right;
+    font-size: 50px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+/* estilo de el div que muestra los ultimos tres movimientos en la página principal */
+div.lastMovements_holder{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  box-sizing: border-box;
+
+  width:100%;
+  height: auto;
+  min-height:280px;
+
+  background-color:#E1E3DF;
+  padding: 16px;
+  padding-bottom: 8px;
+  border-radius:40px;
+}
+
+table.last_movements{
+
+  border-spacing:0px 8px;
+  width: 100%;
+  height: auto;
+}
+.last_movements td.date{
+    box-sizing: border-box;
+    background-color:white;
+    color: rgba(0, 0, 0, 0.75);
+
+    width: 52%;
+    height: 60px;
+    max-height: 60px;
+    border:none;
+    padding: 0px;
+    text-align: left;
+    font-size: 17px;
+    font-weight: normal;
+    vertical-align: middle;
+    padding-left: 26px;
+    border-radius: 26px 0 0 26px;
+}
+.last_movements td.amount{
+    box-sizing: border-box;
+    background-color:white;
+
+    color:black;
+    width: 52%;
+    height: 60px;
+    max-height: 60px;
+    border:none;
+    padding: 0px;
+    text-align: right;
+    font-size: 16px;
+    font-weight: normal;
+    vertical-align: middle;
+    padding-right: 22px;
+    border-radius: 0 26px 26px 0;
+}
+table.movements{
+  border-collapse:separate;
+  border-spacing:0px 6px;
+  width: 100%;
+}
+.movements td.date{
+    box-sizing: border-box;
+    background-color:#E1E3DF;
+    color: rgba(0, 0, 0, 0.75);
+    width: 40%;
+    height: 60px;
+    border:none;
+    padding: 0px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: normal;
+    vertical-align: middle;
+    padding-left: 22px;
+    border-radius: 26px 0 0 26px;
+}
+
+.movements td.amount{
+    box-sizing: border-box;
+    background-color:#E1E3DF;
+    color: rgba(0, 0, 0, 0.75);
+
+    width: 40%;
+    height: auto;
+    border:none;
+    padding: 0px;
+    text-align: right;
+    font-size: 16px;
+    font-weight: normal;
+    vertical-align: middle;
+    padding-right: 22px;
+    border-radius: 0;
+}
+
+.movements td.button{
+    box-sizing: border-box;
+    background-color:#E1E3DF;
+    color: rgba(0, 0, 0, 0.75);
+    vertical-align: middle;
+    width: 20%;
+    height: auto;
+    border:none;
+    padding: 0px;
+    text-align: right;
+    font-size: 16px;
+    font-weight: normal;
+    vertical-align: middle;
+    padding-right: 8px;
+    border-radius: 0 26px 26px 0;
+}
+td.button a{
+  box-sizing: border-box;
+  display: flex;
+  text-align: center;
+  width: 100%;
+  height: 42px;
+  border-radius: 18px;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.75);
+
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  font-weight: normal;
+  transition: all 0.050s;
+
+}
+img{
+  opacity: 75%;
+}
+
+div.mini_header{
+  display: flex;
+
+  box-sizing: border-box;
+  width: 50%;
+  height: 60px;
+  align-items: center;
+}
+
+.mini_header button{
+  display: flex;
+  margin:0;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  width: 86px;
+  height: 32px;
+  padding: 0;
+  background-color: inherit;
+  border-radius: 50px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* NOTE: ESTO DE AQUI CREO QUE NO HACE NADA */
+.menu button{
+  display: flex;
+  margin:0;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  width: 86px;
+  height: 32px;
+  padding: 0;
+  background-color: inherit;
+  border-radius: 50px;
+  text-decoration: none;
+  cursor: pointer;
+}
+a.menu:hover{
+  opacity: 90%;
+}
+
+
+a.menu{
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+
+  justify-content: flex-start;
+  align-items: center;
+  display:flex;
+
+  padding:0 22px;
+  background-color:#E1E3DF;
+  color: rgba(0, 0, 0, 0.75);
+  border-radius: 26px;
+
+  font-size: 18px;
+  text-decoration: none;
+
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.delete{
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+
+  justify-content: center;
+  align-items: center;
+  display:flex;
+
+  padding:0 22px;
+  border: solid 1px #ff5154;
+  background-color:transparent;
+  border-radius: 26px;
+
+  font-size: 18px;
+  color: #ff5154;
+  text-decoration: none;
+
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.delete:hover{
+  border: solid 1px #ff5154;
+  background-color: #ff5154;
+  color:white;
+}
+
+div.message{
+  position: absolute;
+  display:flex;
+  box-sizing: border-box;
+
+
+  height: auto;
+  border-radius: 40px;
+  padding: 26px 32px;
+
+  font-size:32px;
+
+  font-weight: 600;
+  line-height: 30px;
+
+  background-color:#BA1A1A;
+  color:rgba(255, 255, 255, 0.87);
+  z-index: 2;
+
+  animation: transitionAlert 0.2s ease-in 3s;
+  animation-fill-mode: forwards;
+}

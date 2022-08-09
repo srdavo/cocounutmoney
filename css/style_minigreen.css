@@ -1,0 +1,480 @@
+body{
+  display: flex;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  zoom: 100%;
+  background-color: #FBFDF8;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* Esto de aquí es para que no se muestre la scrollbar y que en ios se vea bien el input de fecha */
+::-webkit-scrollbar {display: none;}
+::-webkit-date-and-time-value{ text-align:left;}
+
+
+/* NOTE: Main y content holder son los div pripales que contienen toda la página */
+.main{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 800px;
+  margin: 0px auto;
+  left: 0;
+  right: 0;
+  position: absolute;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 26px; /* Este padding controla el padding principal de toda la página */
+}
+.content_holder{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 100%;
+  height: auto;
+}
+@media only screen and (min-height: 700px) { .content_holder{padding-top:36px;}}
+@media only screen and (max-height: 700px) { .moneyholder{max-height:170px;} }
+
+
+/* NOTE: Aquí comienza el estilo de los texts y cosas básicas */
+h1{
+  width: 100%;
+  font-size: 38px;
+  font-weight:600;
+  color: #002112;
+  line-height: 36px;
+  margin: 0;
+}
+h2{
+  width: 100%;
+  font-size: 26px;
+  font-weight:500;
+  color: #002112;
+  line-height: 32px;
+  margin: 0;
+}
+h3{
+  width: 100%;
+  font-size: 22px;
+  font-weight:500;
+  color: #002112;
+  line-height: 32px;
+  margin: 0;
+}
+p{
+  display:inline-block;
+  font-size: 18px;
+  font-weight:normal;
+  margin: 0;
+  color: #002112;
+}
+button{
+  animation-timing-function: cubic-bezier(0,.94,0,1.9);
+  transition: All 0.01s;
+
+  width:auto;
+  height:auto;
+  min-height:55px;
+  background-color:#006C46;
+  outline:none;
+  border:none;
+  padding: 13px 48px;
+  border-radius:100px;
+  position: relative;
+  overflow: hidden;
+
+  font-weight:500;
+  font-size: 21px;
+  color: rgba(255, 255, 255, 0.87);
+  cursor:pointer;
+}
+button:hover{ background-color:#006240;}
+button.delete{background-color:#ffdad6; color:#410002; transition:all 0.2s;} button.delete:hover{color:#ba1a1a;}
+
+
+form{width:100%;}
+input{
+  box-sizing: border-box;
+  display: inline-block;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  text-align: left;
+
+  width: 100%;
+  height: 60px;
+  border-radius: 26px;
+  outline: none;
+  border: none;
+
+  padding: 18px 22px;
+  font-size: 22px;
+  color: #002112;
+
+  background-color:#E1E3DF;
+  margin-bottom: 16px;
+  transition: All 0.2s;
+  font-family: Roboto;
+}
+textarea{
+  box-sizing: border-box;
+  background-color: #E1E3DF;
+  color: #002112;
+
+  outline: none;
+  border: none;
+  border-radius: 32px;
+  overflow: hidden;
+  width: 100%;
+  height: 160px;
+  margin-bottom: 16px;
+
+  font-size: 18px;
+  font-family: Roboto;
+  resize: none;
+  padding: 22px;
+}
+a.minilink{
+  position:relative;
+  overflow: hidden;
+  width:auto;
+  padding:2px 26px;
+  background-color:#dce5dc;
+  color: #001f28;
+  border-radius:22px;
+  text-decoration:none;
+}
+
+.back_button{
+  position:relative;
+  overflow: hidden;
+  transition:all 0.2s;
+  width: 87px;
+  height: 32px;
+  border-radius:22px;
+  cursor:pointer;
+}
+.back_button:hover{background-color:#DCE5DC;}
+
+
+
+
+/* NOTE: ESTILO PARA TODAS LAS ALERTAS */
+div.alert{
+  position:absolute;
+  display:flex;
+  justify-content: center;
+  top:16px;
+  left:0;
+  right:0;
+
+  margin: 0 auto;
+  width: 190px;
+  height:auto;
+  background-color:#c0e9f9;
+  color:#001f28;
+  border-radius:36px;
+  padding: 8px 26px;
+
+  font-size: 16px;
+  font-weight:500;
+  line-height: 16px;
+
+  animation: transitionAlert 0.2s ease-in 3s;
+  animation-fill-mode: forwards;
+}
+div#error{ background-color:#ba1a1a; color:#ffffff; }
+@keyframes transitionAlert {
+  from {
+    opacity: 100%;
+    transform: scale(100%);
+  }
+  to {
+    opacity: 0%;
+    transform: scale(95%);
+    visibility:hidden;
+  }
+}
+@media only screen and (min-height: 700px) { div.alert{top:62px} }
+
+
+
+
+/* NOTE: COMIENZA ESTILO DE DROPBOX */
+input[type="checkbox"]{ display: none; }
+label[for="menu"]{
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+
+  width: 86px;
+  height: 32px;
+
+  border-radius: 50px;
+  text-decoration: none;
+  cursor: pointer;
+
+  transition: all 0.3s;
+  z-index: 2;
+}
+.dropbox {
+  display: flex;
+  box-sizing: border-box;
+  position: absolute;
+  max-height: 0;
+  transition: max-height .8s;
+  transition-timing-function: cubic-bezier(.05,.39,.11,.99);
+
+  top:62px;
+  width: calc(100% - 52px);
+
+  background-color:#FBFDF8;
+  border-radius: 16px;
+  overflow: hidden;
+  z-index: 1;
+}
+#menu:checked ~ .dropbox { max-height: 400px; }
+
+.dropbox_content_holder{
+  display:flex;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+
+  padding: 42px 0 22px 0;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+.dropbox a{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+
+  width: 100%;
+  height: auto;
+  min-height: 60px;
+  padding: 12px 26px;
+
+  border-radius:26px;
+  color:#002112;
+  background-color:#DCE5DC;
+
+  text-decoration:none;
+  font-size: 22px;
+  font-weight: 500;
+
+  margin-bottom: 4px;
+  overflow: hidden;
+  transition: all 0.3s;
+  transition-timing-function: cubic-bezier(.11,.76,.31,.97);
+}
+.dropbox a:hover{transform: scale(99.5%);}
+
+
+
+
+
+
+
+
+
+/* NOTE: Comeinza estilo de MYMONEY.PHP */
+div.moneyholder{
+  transition: all 0.3s;
+  display:flex;
+  flex-wrap: wrap;
+  align-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+
+  width: 100%;
+  height: auto;
+  background-color:#8FF7C0;
+  border-radius:50px;
+
+  padding: 69px 24px;
+  cursor:pointer;
+
+}
+.moneyholder:hover{  transform: scale(1.005);  }
+#small{ padding: 32px 24px; cursor:default;}
+#negative{ background-color:#ffdad6; padding: 32px 24px; cursor:default;}
+#neutral{ background-color:#c0e9f9; cursor:default; padding: 32px 24px;}
+@media only screen and (max-width: 700px) {.moneyholder:hover{  transform: scale(1.03);  }}
+
+div.lastMovements_holder{
+  display:flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+
+  width:100%;
+
+  background-color:#DCE5DC;
+  border-radius:40px;
+  padding:16px;
+}
+
+
+/* Estilo de tablas */
+table{ width:100%; border-collapse:separate;table-layout:fixed; }
+tr{
+  display:flex;
+  margin-bottom:4px;
+  border-radius: 26px;
+  background-color: white;
+}
+td, th{
+  display:flex;
+  box-sizing: border-box;
+
+  width: 100%;
+  white-space:wrap;
+  height: 60px;
+  align-items: center;
+
+  font-size:16px;
+  font-weight:400;
+  line-height: 18px;
+}
+td.amount{
+  justify-content: flex-end;
+}
+td:first-child, th:first-child { border-radius: 26px 0 0 26px; }
+td:last-child, th:last-child { border-radius: 0 26px 26px 0; }
+
+table tr td:first-child {padding-left: 26px;}
+table tr td:last-child {padding-right: 26px;}
+
+.movements tr{background-color:#DCE5DC;}
+.movements td.date{width: 40%; font-weight:500;}
+.movements td.amount{width: 40%; padding-right: 16px;}
+.movements td.button{width: 20%; padding-right:7px}
+
+td.button a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 80%;
+  background-color:#fbfdf8;
+  border-radius:20px;
+  text-decoration:none;
+  color:#006C46;
+  transition:all 0.1s;
+}
+td.button a:hover{
+  background-color:#006c46; color: white;
+}
+
+
+
+
+/* NOTE: COMIENZA ESTILO PARA ANIMACIONES */
+
+/* Animaciones para transición */
+@keyframes fullscreen-animation {
+    from {
+      transform: scale(1);
+      z-index: 2;
+    }
+    to {
+        transform: scale(100);
+        border-radius:0px;
+        z-index: 2;
+    }
+  }
+  @keyframes fullscreen-animation-end {
+      from {
+        transform: scale(1);
+        z-index: 2;
+      }
+      to {
+        transform: scale(1);
+        z-index: 2;
+      }
+    }
+    @keyframes smoothstart-animation {
+      from {
+        background-color: #3D6750;
+        opacity: 1;
+        z-index: 1;
+      }
+      to {
+          opacity: 0;
+    z-index: 1;
+      }
+    }
+    div.smoothstart{
+      position: absolute;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+
+      z-index: 0;
+      opacity: 0;
+      animation: smoothstart-animation 0.5s;
+    }
+
+    span.ripple {
+      margin:auto;
+      position: absolute;
+      background: #FDFCF9;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      border-radius: 50%;
+      animation: rippleanimate 1s;
+      animation-timing-function: cubic-bezier(.22,1.1,.53,.98);
+      opacity: 0;
+      z-index: 10
+    }
+
+    @keyframes rippleanimate {
+      from {
+        width: 0px;
+        height: 0px;
+        opacity: 0.5;
+      }
+      to {
+        width: 500px;
+        height: 500px;
+      }
+    }
+
+
+    .circle{
+
+      left: 0;
+      right: 0;
+      position: absolute;
+
+      display: none;
+    	margin: 66px auto;
+    	width: 40px;
+    	height: 40px;
+    	border: 5px solid #006c46;
+    	border-radius: 50%;
+    	border-top-color: #fff;
+    	animation: spin 1s linear infinite;
+      z-index: 6;
+
+    }
+    #small_circle{
+      width:20px;
+      height:20px;
+    }
+    @Keyframes spin{
+    	100%{
+    		transform: rotate(360deg);
+    	}
+    }

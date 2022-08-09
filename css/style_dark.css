@@ -1,0 +1,365 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  zoom: 100%;
+  background-color: black;
+
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+-webkit-user-select: none;
+-webkit-tap-highlight-color: transparent;
+
+}
+::-webkit-date-and-time-value{ text-align:left;}
+form{
+  width: 100%;
+
+}
+
+header{
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 90px;
+  background-color:#e9ecef;
+
+}
+header span a{
+  font-size: 22px;
+  text-decoration:none;
+  color: black;
+  margin-right: 22px;
+}
+@keyframes transitionTable {
+  from {
+    opacity: 50%;
+    transform: scale(98%);
+  }
+  to {
+    opacity: 100%;
+    transform: scaleX(100%);
+  }
+}
+@keyframes transitionIn {
+  from {
+    opacity: 50%;
+    transform: scale(99%);
+  }
+  to {
+    opacity: 100%;
+    transform: scaleX(100%);
+  }
+}
+.main{
+  position: fixed;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+  padding: 32px;
+
+}
+.content_holder{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 100%;
+  height: auto;
+  animation: transitionIn .8s;
+  animation-timing-function: cubic-bezier(.11,.76,.31,.97);
+}
+
+h1{
+  display:flex;
+  font-size: 38px;
+  width: 100%;
+  font-weight: bold;
+  color: white;
+  margin: 0px;
+  margin-bottom: 32px;
+  animation: transitionTable 0.6s;
+  animation-timing-function: cubic-bezier(.11,.76,.31,.97);
+  line-height: 32px;
+}
+h2.index_h2{
+  font-size: 48px;
+  font-weight: 300;
+  color: white;
+  margin: 0px;
+}
+h2{
+  width: 100%;
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  margin: 0px;
+  margin-bottom: 6px;
+}
+input{
+  box-sizing: border-box;
+  display: inline-block;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  text-align: left;
+
+  width: 100%;
+  height: 56px;
+  border-radius: 22px;
+  outline: none;
+  border: none;
+
+  padding: 14px 22px;
+  font-size: 23px;
+  color: white;
+  background-color:#1C1C1D;
+  margin-bottom: 11px;
+  transition: All 0.2s;
+  font-family: Roboto;
+}
+
+
+textarea{
+  box-sizing: border-box;
+
+  outline: none;
+  border: none;
+  border-radius: 22px;
+  overflow: hidden;
+  width: 100%;
+  height: 160px;
+  margin-bottom: 11px;
+  background-color:#1C1C1D;
+  color:white;
+
+  font-size: 18px;
+  font-family: Roboto;
+  resize: none;
+  padding: 22px;
+
+}
+button{
+  box-sizing: border-box;
+  width: 100%;
+  height: 58px;
+
+
+  text-decoration: none;
+  text-align: center;
+  font-size: 18px;
+  color: #99C2FF;
+  background-color: #00183D;
+  position: relative;
+  overflow: hidden;
+  padding: 19px 0;
+  border: none;
+  border-radius: 30px;
+
+  margin-top: 30px;
+  cursor: pointer;
+  transition: all 0.1s;
+
+  animation: transitionTable 0.6s;
+  animation-timing-function: cubic-bezier(.11,.76,.31,.97);
+}
+button:hover{
+  opacity: 90%;
+}
+
+a.index_a{
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 58px;
+
+  text-align: center;
+  padding: 19px 0;
+  color: #99C2FF;
+  background-color: #00183D;
+
+  border-radius: 30px;
+  font-size: 18px;
+
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+a.back{
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  width: 86px;
+  height: 32px;
+  color:white;
+  padding: 6px 11px;
+
+  border-radius: 50px;
+  text-decoration: none;
+  cursor: pointer;
+
+  margin-bottom: 32px;
+
+}
+.main h3{
+  min-width: 100%;
+  margin: 0;
+  font-size: 46px;
+  font-weight: normal;
+  color: white;
+}
+
+span.ripple {
+  position: absolute;
+  background: white;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50%;
+  animation: rippleanimate 1s;
+  animation-timing-function: cubic-bezier(.22,1.1,.53,.98);
+  opacity: 0;
+}
+
+@keyframes rippleanimate {
+  from {
+    width: 0px;
+    height: 0px;
+    opacity: 0.5;
+  }
+  to {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+div.userAmount_holder{
+  box-sizing: border-box;
+  width:100%;
+  height:82px;
+  padding:14px 11px;
+  background-color:#1C1C1D;
+  border-radius:22px;
+}
+
+div.lastMovements_holder{
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width:100%;
+  height:267px;
+  padding: 0;
+
+  margin-top: 60px;
+}
+
+table.last_movements{
+  border-collapse:separate;
+  border-spacing:0 6px;
+  width: 100%;
+}
+.last_movements td.date{
+    box-sizing: border-box;
+    background-color:#1C1C1D;
+    color:white;
+    width: 51%;
+    height: 51px;
+    border:none;
+    padding: 0px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: normal;
+    vertical-align: middle;
+    padding-left: 22px;
+    border-radius: 14px 0 0 14px;
+}
+.last_movements td.amount{
+    box-sizing: border-box;
+    background-color:#1C1C1D;
+    color:white;
+    width: 51%;
+    height: 51px;
+    border:none;
+    padding: 0px;
+    text-align: right;
+    font-size: 16px;
+    font-weight: normal;
+    vertical-align: middle;
+    padding-right: 22px;
+    border-radius: 0 14px 14px 0;
+}
+a.lastMovements_links{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  width: calc(100% - 11px);
+  height: 42px;
+
+  text-align: center;
+
+  color: #99C2FF;
+  background-color: #00183D;
+
+  border-radius: 14px;
+  font-size: 18px;
+
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+table.movements{
+  border-collapse:separate;
+  border-spacing:0 6px;
+  width: 100%;
+}
+.movements td.date{
+    box-sizing: border-box;
+    background-color:#1C1C1D;
+    color:white;
+    width: 51%;
+    height: 51px;
+    border:none;
+    padding: 0px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: normal;
+    vertical-align: middle;
+    padding-left: 22px;
+    border-radius: 14px 0 0 14px;
+}
+
+.movements td.amount{
+    box-sizing: border-box;
+    background-color:#1C1C1D;
+    color:white;
+    width: 51%;
+    height: 51px;
+    border:none;
+    padding: 0px;
+    text-align: right;
+    font-size: 16px;
+    font-weight: normal;
+    vertical-align: middle;
+    padding-right: 22px;
+    border-radius: 0 14px 14px 0;
+}
+
+
+div.menu{
+  display: flex;
+  position: absolute;
+  box-sizing: border-box;
+
+  width: 70%;
+  height: 60px;
+
+}
